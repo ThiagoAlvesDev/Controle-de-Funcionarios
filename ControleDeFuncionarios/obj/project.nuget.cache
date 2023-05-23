@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yvWmQmq+9toQPlhjA0DA46AkP9TxPQ0RLs6pQr/mElvcmrydRWeoxHNGhP6bnNQePo98ZyDqhv3b8OnbkOzSdA==",
+  "dgSpecHash": "AhkBaxVDqrVnVbteFEW9IRjIMM1TXR47itpwSqKWjjc0r3p+fWD1s0MIX32ozcoSgdN+H08THEDeB1DqGjTKeQ==",
   "success": true,
-  "projectFilePath": "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
+  "projectFilePath": "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.16\\microsoft.aspnetcore.mvc.razor.extensions.6.0.16.nupkg.sha512",

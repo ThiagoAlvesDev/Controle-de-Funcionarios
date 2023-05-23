@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj": {}
+    "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj": {}
   },
   "projects": {
-    "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj": {
+    "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
+        "projectUniqueName": "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
         "projectName": "ControleDeFuncionarios",
-        "projectPath": "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
+        "projectPath": "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\ControleDeFuncionarios.csproj",
         "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "D:\\dev\\c#\\ControleDeFuncionarios\\ControleDeFuncionarios\\obj\\",
+        "outputPath": "D:\\Dev\\C#\\ControleDeFuncionarios\\ControleDeFuncionarios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
