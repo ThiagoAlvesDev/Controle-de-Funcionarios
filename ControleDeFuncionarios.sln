@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeFuncionarios", "ControleDeFuncionarios\ControleDeFuncionarios.csproj", "{006BDE69-8475-459B-80A5-577300107AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleDeFuncionarios", "ControleDeFuncionarios\ControleDeFuncionarios.csproj", "{006BDE69-8475-459B-80A5-577300107AB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64E7619D-4EE8-43C3-B83B-0BCF5D5FFACC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
