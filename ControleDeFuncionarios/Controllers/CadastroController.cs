@@ -65,12 +65,12 @@ namespace ControleDeFuncionarios.Controllers
             {
                 _bancoContext.Cargo.Add(colaborador.Cargo);
             }
-            //if (colaborador.DataDemissao == default(DateTime?))
-            //{
-            //    colaborador.DataDemissao = null;
-            //}
+			if (colaborador.DataDemissao == default(DateTime?))
+			{
+				colaborador.DataDemissao = null;
+			}
 
-            _bancoContext.Colaborador.Add(colaborador);
+			_bancoContext.Colaborador.Add(colaborador);
             _bancoContext.SaveChanges();
 
             return RedirectToAction("Criar");
