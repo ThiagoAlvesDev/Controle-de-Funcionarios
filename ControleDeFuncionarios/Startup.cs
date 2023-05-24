@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ControleDeFuncionarios.Data;
+using ControleDeFuncionarios.Repositorio;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +26,14 @@ namespace ControleDeFuncionarios
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddControllers();
+            //services.AddDbContext<BancoContext>();
+            //services.AddEntityFrameworkSqlite()
+            //    .AddDbContext<BancoContext>(
+            //    x => x.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
+            //services.AddScoped<IColaboradorRepositorio, ColaboradorRepositorio>();
+            //services.AddDbContext<BancoContext>(x => x.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
+        services.AddDbContext<BancoContext>(opcoes => opcoes.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

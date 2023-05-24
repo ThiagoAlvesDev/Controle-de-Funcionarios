@@ -1,54 +1,59 @@
-﻿@{
-	ViewData["Title"] = "Colaborador";
+﻿@model IEnumerable<ControleDeFuncionarios.Models.ColaboradorModel>
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-	<h1 class="display-4">Lista de colaboradores</h1>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Matricula</th>
-				<th scope="col">Opções</th>
+<h1>Index</h1>
 
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Larissa</td>
-				<td>AA1234</td>
-				<td>
-					<div class=" ">
-						<a class="btn btn-primary" role="button">Visualizar</a>
-						<a class="btn btn-primary" role="button" asp-controller="Colaborador" asp-action="Editar">Editar</a>
-					</div>
-				</td>
-			</tr>
-
-			<tr>
-				<th scope="row">2</th>
-				<td>Marcos</td>
-				<td>AB9876</td>
-				<td>
-					<div >
-						<a class="btn btn-primary" role="button">Visualizar</a>
-						<a class="btn btn-primary" role="button" asp-controller="Colaborador" asp-action="Editar">Editar</a>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Alexandre</td>
-				<td>AD9875</td>
-				<td>
-					<div >
-						<a class="btn btn-primary" role="button">Visualizar</a>
-						<a class="btn btn-primary" role="button" asp-controller="Colaborador" asp-action="Editar">Editar</a>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeColaborador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAdmissao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDemissao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeColaborador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAdmissao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDemissao)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

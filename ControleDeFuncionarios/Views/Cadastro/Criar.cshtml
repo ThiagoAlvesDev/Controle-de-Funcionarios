@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ControleDeFuncionarios.Models.ColaboradorModel
+
+@{
 	ViewData["Title"] = "Cadastro";
 }
 
@@ -9,72 +11,59 @@
 
 <div>
 	<h2 class="display-6"> Dados do Colaborador</h2>
-	<form class="row g-3">
+	<form class="row g-3" asp-action="Criar" method="post">
 		<div class="col-md-6">
-			<label for="inputEmail4" class="form-label">Nome completo</label>
-			<input type="text" class="form-control" id="inputName" placeholder='Thiago Sales Alves'>
+			<label  class="form-label">Nome completo</label>
+			<input type="text" asp-for="NomeColaborador" class="form-control" placeholder='Thiago Sales Alves'>
 		</div>
 		<div class="col-md-3">
-			<label for="inputCPF" class="form-label">CPF</label>
-			<input type="text" class="form-control" name="cpf" \
-				   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder=" xxx.xxx.xxx-xx" id="inputCPF">
+			<label class="form-label">CPF</label>
+			<input type="text" asp-for= "Cpf" class="form-control" \
+				   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder=" xxx.xxx.xxx-xx">
 		</div>
 		<div class="col-3">
-			<label for="inputMatricula" class="form-label">Matricula</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="AA1234">
-		</div>
+			<label  class="form-label">Matricula</label>
+			<input type="text" asp-for="Matricula" class="form-control"  placeholder="AA1234">
+		</div>	
 
-		@*<div class="col-md-2">
-			<label for="inputAdmissao" class="form-label">Data de Admissão</label>
-			<input type="date" class="form-control" id="inputAdmissao">
-			</div>*@
-
-	</form>
-</div>
-
-<div>
 	<h2 class="display-6">Cargo atribuido</h2>
-	<form class="row g-3">
+
 		<div class="col-md-3">
-			<label for="inputCargo" class="form-label">Nome</label>
-			<input type="text" class="form-control" id="inputCargo" placeholder='Desenvolvedor júnior'>
+			<label class="form-label">Nome</label>
+			<input type="text" asp-for = "Cargo.Funcao" class="form-control" placeholder='Desenvolvedor júnior'>
 		</div>
 		<div class="col-md-3">
-			<label for="inputCBO" class="form-label">CBO(classificação brasileira de ocupações)</label>
-			<input type="text" class="form-control" name="cpf" placeholder=" " id="inputCBO">
+			<label class="form-label">CBO(classificação brasileira de ocupações)</label>
+			<input type="text" asp-for= "Cargo.Cbo" class="form-control" placeholder="" >
 		</div>
 		<div class="col-5">
-			<label for="inputDescricao" class="form-label">Descrição da Atividade</label>
-			<textarea type="text" class="form-control" id="inputAddress" placeholder=""></textarea>
+			<label class="form-label">Descrição da Atividade</label>
+			<textarea type="text" asp-for="Cargo.Descricao" class="form-control" placeholder=""></textarea>
 		</div>
 
 		<div class="col-md-2">
-			<label for="inputAdmissao" class="form-label">Data de Admissão</label>
-			<input type="date" class="form-control" id="inputAdmissao">
+			<label class="form-label">Data de Admissão</label>
+			<input asp-for="DataAdmissao" class="form-control" />
 		</div>
 
-	</form>
+	<h2 class="display-6" >Dados da Empresa</h2>
 
-</div>
-<div>
-	<h2 class="display-6">Dados da Empresa</h2>
-	<form class="row g-3">
 		<div class="col-3">
-			<label for="inputRsocial" class="form-label">Razão Social</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="">
+			<label class="form-label">Razão Social</label>
+			<input type="text" asp-for= "Empresa.RazaoSocial" class="form-control" placeholder="">
 		</div>
 		<div class="col-md-6">
-			<label for="inputNFantasia" class="form-label">Nome Fantasia</label>
-			<input type="text" class="form-control" id="inputName" placeholder='Nydus'>
+			<label class="form-label">Nome Fantasia</label>
+			<input type="text" asp-for="Empresa.NomeFantasia" class="form-control" placeholder='Nydus'>
 		</div>
 		<div class="col-md-3">
-			<label for="inputCNPJ" class="form-label">CNPJ</label>
-			<input type="text" class="form-control" name="cpf" \
-				   pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder=" xx.xxx.xxx/xxxx-xx" id="inputCNPJ">
+			<label class="form-label">CNPJ</label>
+			<input type="text" asp-for="Empresa.Cnpj" class="form-control" \
+				   pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder=" xx.xxx.xxx/xxxx-xx" >
 		</div>
+		<div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
 
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary">Sign in</button>
-		</div>
 	</form>
 </div>
