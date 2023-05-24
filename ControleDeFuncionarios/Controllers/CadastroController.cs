@@ -27,7 +27,7 @@ namespace ControleDeFuncionarios.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(ColaboradorModel colaborador, EmpresaModel empresa, CargoModel cargo)
+        public IActionResult Criar(ColaboradorModel colaborador)
         {
 
             var colaboradorExistente = _bancoContext.Colaborador.FirstOrDefault(e =>
@@ -65,6 +65,10 @@ namespace ControleDeFuncionarios.Controllers
             {
                 _bancoContext.Cargo.Add(colaborador.Cargo);
             }
+            //if (colaborador.DataDemissao == default(DateTime?))
+            //{
+            //    colaborador.DataDemissao = null;
+            //}
 
             _bancoContext.Colaborador.Add(colaborador);
             _bancoContext.SaveChanges();

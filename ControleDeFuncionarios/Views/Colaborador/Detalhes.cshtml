@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ControleDeFuncionarios.Models.ColaboradorModel>
+
+@{
+	ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Nome
+				</th>
+				<th>
+					CPF
+				</th>
+				<th>
+					Matricula
+				</th>
+
+				<th>
+					Data de Admissão
+				</th>
+				<th>
+					Data De Demissão
+				</th>
+				<th>
+					Razão Social
+				</th>
+				<th>
+					Nome Fantasia
+				</th>
+				<th>
+					CNPJ
+				</th>				
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.NomeColaborador)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Cpf)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Matricula)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataAdmissao)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataDemissao)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Empresa.RazaoSocial)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Empresa.Cnpj)
+					</td>
+					<td>
+					</td>
+				</tr>
+				<a asp-action="Index" asp-route-id="@item.Id">Voltar</a>
+			}
+		</tbody>
+	</table>
+</div>

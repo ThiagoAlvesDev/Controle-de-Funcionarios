@@ -1,84 +1,59 @@
-﻿@{
-	ViewData["Title"] = "Cadastro";
+﻿@model ControleDeFuncionarios.Models.ColaboradorModel
+
+@{
+    ViewData["Title"] = "Editar";
 }
 
-<div class="text-center">
-	<h1 class="display-4">Cadastro</h1>
-	<hr />
+<h1>Editar</h1>
+
+<h4>ColaboradorModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomeColaborador" class="control-label"></label>
+                <input asp-for="NomeColaborador" class="form-control" />
+                <span asp-validation-for="NomeColaborador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Matricula" class="control-label"></label>
+                <input asp-for="Matricula" class="form-control" />
+                <span asp-validation-for="Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAdmissao" class="control-label"></label>
+                <input asp-for="DataAdmissao" class="form-control" />
+                <span asp-validation-for="DataAdmissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataDemissao" class="control-label"></label>
+                <input asp-for="DataDemissao" class="form-control" />
+                <span asp-validation-for="DataDemissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Empresa.Cnpj" class="control-label"></label>
+                <input asp-for="Empresa.Cnpj" class="form-control" />
+                <span asp-validation-for="Empresa.Cnpj" class="text-danger"></span>
+            </div>
+            <div class="form-group">    
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
 
 <div>
-	<h2 class="display-6"> Dados do Colaborador</h2>
-	<form class="row g-3">
-		<div class="col-md-6">
-			<label for="inputEmail4" class="form-label">Nome completo</label>
-			<input type="text" class="form-control" id="inputName" placeholder='Thiago Sales Alves'>
-		</div>
-		<div class="col-md-3">
-			<label for="inputCPF" class="form-label">CPF</label>
-			<input type="text" class="form-control" name="cpf" \
-				   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder=" xxx.xxx.xxx-xx" id="inputCPF">
-		</div>
-		<div class="col-3">
-			<label for="inputMatricula" class="form-label">Matricula</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="AA1234">
-		</div>
-
-		@*<div class="col-md-2">
-			<label for="inputAdmissao" class="form-label">Data de Admissão</label>
-			<input type="date" class="form-control" id="inputAdmissao">
-			</div>*@
-
-	</form>
+    <a asp-action="Index">Back to List</a>
 </div>
 
-<div>
-	<h2 class="display-6">Cargo atribuido</h2>
-	<form class="row g-3">
-		<div class="col-md-3">
-			<label for="inputCargo" class="form-label">Nome</label>
-			<input type="text" class="form-control" id="inputCargo" placeholder='Desenvolvedor júnior'>
-		</div>
-		<div class="col-md-3">
-			<label for="inputCBO" class="form-label">CBO(classificação brasileira de ocupações)</label>
-			<input type="text" class="form-control" name="cpf" placeholder=" " id="inputCBO">
-		</div>
-		<div class="col-5">
-			<label for="inputDescricao" class="form-label">Descrição da Atividade</label>
-			<textarea type="text" class="form-control" id="inputAddress" placeholder=""></textarea>
-		</div>
-
-		<div class="col-md-2">
-			<label for="inputAdmissao" class="form-label">Data de Admissão</label>
-			<input type="date" class="form-control" id="inputAdmissao">
-		</div>
-		<div class="col-md-2">
-			<label for="inputDemissao" class="form-label">Data de Demissao</label>
-			<input type="date" class="form-control" id="inputAdmissao">
-		</div>
-
-	</form>
-
-</div>
-<div>
-	<h2 class="display-6">Dados da Empresa</h2>
-	<form class="row g-3">
-		<div class="col-3">
-			<label for="inputRsocial" class="form-label">Razão Social</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="">
-		</div>
-		<div class="col-md-6">
-			<label for="inputNFantasia" class="form-label">Nome Fantasia</label>
-			<input type="text" class="form-control" id="inputName" placeholder='Nydus'>
-		</div>
-		<div class="col-md-3">
-			<label for="inputCNPJ" class="form-label">CNPJ</label>
-			<input type="text" class="form-control" name="cpf" \
-				   pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder=" xx.xxx.xxx/xxxx-xx" id="inputCNPJ">
-		</div>
-
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary">Sign in</button>
-		</div>
-	</form>
-</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
