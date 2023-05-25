@@ -22,6 +22,7 @@
 * Configurar o banco de dados. criando a connection string e adicionando em "ConfigureServices" dentro de Startup.cs
 * Apos as configurações de connection String e SQLite  inicie o banco de dados no projeto.
 * Comando para adicionar o banco de dados local. 
+  
   -- Package Manager Console     
  
        Add-Migragrion NomeQueDesejar
