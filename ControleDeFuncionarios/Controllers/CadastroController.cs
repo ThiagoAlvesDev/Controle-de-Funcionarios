@@ -24,10 +24,24 @@ namespace ControleDeFuncionarios.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Sucesso()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> CriarAsync(ColaboradorModel colaborador)
         {
+            var cpfExistente = _bancoContext.Colaborador.Any(e =>
+               e.Cpf == colaborador.Cpf);
+
+            if (cpfExistente)
+            {
+                ModelState.AddModelError("Cpf", "Cpf já cadastrado.");
+                return View(colaborador);
+            }
+
             var colaboradorExistente = _bancoContext.Colaborador.Any(e =>
                 e.Matricula == colaborador.Matricula);
 
@@ -35,7 +49,7 @@ namespace ControleDeFuncionarios.Controllers
             {
                 ModelState.AddModelError("Matricula", "A matrícula já existe. Escolha uma matrícula diferente.");
                 return View(colaborador);
-            }
+            }      
 
 
             // Verificar a situação do CNPJ
@@ -109,7 +123,7 @@ namespace ControleDeFuncionarios.Controllers
             _bancoContext.Colaborador.Add(colaborador);
             _bancoContext.SaveChanges();
 
-            return RedirectToAction("Criar");
+            return RedirectToAction("Sucesso");
         }
     }
 }

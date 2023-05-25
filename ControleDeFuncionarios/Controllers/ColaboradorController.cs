@@ -34,6 +34,11 @@ namespace ControleDeFuncionarios.Controllers
 
             return View(colaborador);
         }
+        [HttpGet]
+        public IActionResult Sucesso()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Editar(ColaboradorModel colaborador)
@@ -88,7 +93,7 @@ namespace ControleDeFuncionarios.Controllers
 
             _bancoContext.Colaborador.Update(colaborador);
             _bancoContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Sucesso");
         }
 
         public IActionResult Visualizar()
