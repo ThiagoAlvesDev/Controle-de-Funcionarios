@@ -1,4 +1,5 @@
-﻿using ControleDeFuncionarios.Data;
+﻿using ControleDeFuncionarios.APIservice;
+using ControleDeFuncionarios.Data;
 using ControleDeFuncionarios.Models;
 using ControleDeFuncionarios.Repositorio;
 using Microsoft.AspNetCore.Mvc;
@@ -8,12 +9,11 @@ namespace ControleDeFuncionarios.Controllers
     public class CadastroController : Controller
     {
         private readonly BancoContext _bancoContext;
-
-
-
+        
         public CadastroController(BancoContext bancoContext)
         {
             _bancoContext = bancoContext;
+            
         }
         public IActionResult Index()
         {
@@ -27,7 +27,7 @@ namespace ControleDeFuncionarios.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(ColaboradorModel colaborador)
+        public async Task<IActionResult> CriarAsync(ColaboradorModel colaborador)
         {
 
             var colaboradorExistente = _bancoContext.Colaborador.FirstOrDefault(e =>
@@ -39,7 +39,25 @@ namespace ControleDeFuncionarios.Controllers
                 ModelState.AddModelError("Matricula", "A matrícula já existe. Escolha uma matrícula diferente.");
                 return View(colaborador);
             }
+            // Verificar a situação do CNPJ
+            var cnpjService = new ValidacaoCNPJ();
 
+			try
+			{
+
+            string situacaoCnpj =  await cnpjService.ObterSituacaoCnpj(colaborador.Empresa.Cnpj);
+
+            if (situacaoCnpj != "ATIVA")
+            {
+                ModelState.AddModelError("Empresa.Cnpj", "A empresa não está ativa. Insira um CNPJ válido.");
+                return View(colaborador);
+            }
+			}
+            catch(Exception ex)
+			{
+                ModelState.AddModelError("Empresa.Cnpj", "Erro ao verificar a situação do CNPJ. Tente novamente mais tarde.");
+                return View(colaborador);
+            }
             var empresaExistente = _bancoContext.Empresa.FirstOrDefault(e =>
                 e.Cnpj == colaborador.Empresa.Cnpj &&
                 e.RazaoSocial == colaborador.Empresa.RazaoSocial);

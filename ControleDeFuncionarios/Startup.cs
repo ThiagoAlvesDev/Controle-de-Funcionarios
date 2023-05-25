@@ -1,4 +1,5 @@
-﻿using ControleDeFuncionarios.Data;
+﻿using ControleDeFuncionarios.APIservice;
+using ControleDeFuncionarios.Data;
 using ControleDeFuncionarios.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,19 @@ namespace ControleDeFuncionarios
             //    x => x.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
             //services.AddScoped<IColaboradorRepositorio, ColaboradorRepositorio>();
             //services.AddDbContext<BancoContext>(x => x.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
-        services.AddDbContext<BancoContext>(opcoes => opcoes.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
+            services.AddDbContext<BancoContext>(opcoes => opcoes.UseSqlite(Configuration.GetConnectionString("DataBaseSQLite")));
+            services.AddHttpClient<ValidacaoCNPJ>(client =>
+            {
+                client.BaseAddress = new Uri("https://www.receitaws.com.br/v1/");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                     })
+                .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+                    {
+                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                 })
+                .SetHandlerLifetime(TimeSpan.FromMinutes(5));
+
+            services.AddTransient<ValidacaoCNPJ>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
