@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleDeFuncionarios.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20230524003008_ConfigurandoNovamente")]
-    partial class ConfigurandoNovamente
+    [Migration("20230525050052_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,7 +25,7 @@ namespace ControleDeFuncionarios.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CBO")
+                    b.Property<string>("Cbo")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
@@ -54,7 +54,7 @@ namespace ControleDeFuncionarios.Migrations
                     b.Property<DateTime>("DataAdmissao")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataDemissao")
+                    b.Property<DateTime?>("DataDemissao")
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("EmpresaId")
@@ -81,7 +81,7 @@ namespace ControleDeFuncionarios.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CNPJ")
+                    b.Property<string>("Cnpj")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NomeFantasia")

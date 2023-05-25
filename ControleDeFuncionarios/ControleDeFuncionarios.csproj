@@ -11,14 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Views\Cadastro\Criar.3cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Views\Cadastro\Criar.3cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 

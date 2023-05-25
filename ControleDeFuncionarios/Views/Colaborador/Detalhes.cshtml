@@ -29,7 +29,7 @@
 		</div>
 
 		<div>
-			<h2 class="display-6">Cargo atribuído</h2>
+			<h2 class="display-6">Dados da Função</h2>
 			<form class="row g-3">
 				<div class="col-md-3">
 					<label for="inputCargo" class="form-label">Nome</label>
@@ -40,12 +40,12 @@
 					<input disable type="text" class="form-control" value="@item.Cargo.Cbo" disabled>
 				</div>
 				<div class="col-5">
-					<label for="inputAddress" class="form-label">Descrição da Atividade</label>
+					<label for="inputAddress" class="form-label">Descrição</label>
 					<textarea type="text" class="form-control" disabled>@item.Cargo.Descricao </textarea>
 				</div>
 				<div class="col-md-2">
 					<label class="form-label">Data de Admissão</label>
-					<input type="datetime" class="form-control" value="@item.DataAdmissao.ToString("dd/MM/yyyy")" disabled />
+					<input type="datetime" class="form-control" value="@item.DataAdmissao?.ToString("dd/MM/yyyy")" disabled />
 				</div>
 				<div class="col-md-2">
 					<label class="form-label">Data de Demissão</label>

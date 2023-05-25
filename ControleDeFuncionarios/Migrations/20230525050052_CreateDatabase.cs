@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,7 +16,7 @@ namespace ControleDeFuncionarios.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Funcao = table.Column<string>(type: "TEXT", nullable: true),
-                    CBO = table.Column<string>(type: "TEXT", nullable: true),
+                    Cbo = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -31,7 +32,7 @@ namespace ControleDeFuncionarios.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     RazaoSocial = table.Column<string>(type: "TEXT", nullable: true),
                     NomeFantasia = table.Column<string>(type: "TEXT", nullable: true),
-                    CNPJ = table.Column<string>(type: "TEXT", nullable: true)
+                    Cnpj = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,6 +48,8 @@ namespace ControleDeFuncionarios.Migrations
                     NomeColaborador = table.Column<string>(type: "TEXT", nullable: true),
                     Cpf = table.Column<string>(type: "TEXT", nullable: true),
                     Matricula = table.Column<string>(type: "TEXT", nullable: true),
+                    DataAdmissao = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DataDemissao = table.Column<DateTime>(type: "TEXT", nullable: true),
                     EmpresaId = table.Column<int>(type: "INTEGER", nullable: true),
                     CargoId = table.Column<int>(type: "INTEGER", nullable: true)
                 },

@@ -1,6 +1,5 @@
 ﻿using ControleDeFuncionarios.APIservice;
 using ControleDeFuncionarios.Data;
-using ControleDeFuncionarios.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

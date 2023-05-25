@@ -16,39 +16,46 @@
 		<div class="col-md-6">
 			<label for="inputName" class="form-label">Nome completo</label>
 			<input asp-for="NomeColaborador" type="text" class="form-control" id="inputName">
+			<span asp-validation-for="NomeColaborador" class="text-danger"></span>
 		</div>
 		<div class="col-md-3">
 			<label for="inputCPF" class="form-label">CPF</label>
 			<input asp-for="Cpf" type="text" class="form-control">
+			 <span asp-validation-for="Cpf" class="text-danger"></span>
 		</div>
 		<div class="col-3">
 			<label for="inputAddress" class="form-label">Matrícula</label>
 			<input asp-for="Matricula" type="text" class="form-control" >
+			<span asp-validation-for="Matricula" class="text-danger"></span>
 		</div>
 
 
 
-		<h2 class="display-6">Cargo atribuído</h2>
+		<h2 class="display-6">Dados da Função</h2>
 
 		<div class="col-md-3">
 			<label for="inputCargo" class="form-label">Nome</label>
 			<input asp-for="Cargo.Funcao" Type="text" class="form-control">
+			<span asp-validation-for="Cargo.Funcao" class="text-danger"></span>
 		</div>
 		<div class="col-md-3">
 			<label for="inputCBO" class="form-label">CBO (Classificação Brasileira de Ocupações)</label>
 			<input asp-for="Cargo.Cbo" type="text" class="form-control">
+			<span asp-validation-for="Cargo.Cbo" class="text-danger"></span>
 		</div>
 		<div class="col-5">
-			<label for="inputAddress" class="form-label">Descrição da Atividade</label>
+			<label for="inputAddress" class="form-label">Descrição</label>
 			<textarea asp-for="Cargo.Descricao" type="text" class="form-control"> </textarea>
+			<span asp-validation-for="Cargo.Descricao" class="text-danger"></span>
 		</div>
 		<div class="col-md-2">
 			<label class="form-label">Data de Admissão</label>
-			<input asp-for="DataAdmissao" class="form-control" />
+			<input asp-for="DataAdmissao" class="form-control"/>
 		</div>
 		<div class="col-md-2">
 			<label class="form-label">Data de Demissão</label>
 			<input asp-for="DataDemissao" class="form-control" id="inputDataDemissao" />
+			<span asp-validation-for="DataDemissao" class="text-danger"></span>
 		</div>
 
 
@@ -58,30 +65,25 @@
 		<div class="col-3">
 			<label for="inputAddress" class="form-label">Razão Social</label>
 			<input asp-for="Empresa.RazaoSocial" type="text" class="form-control">
+			<span asp-validation-for="Empresa.RazaoSocial" class="text-danger"></span>
 		</div>
 		<div class="col-md-6">
 			<label for="inputName" class="form-label">Nome Fantasia</label>
 			<input asp-for="Empresa.NomeFantasia" type="text" class="form-control">
+			<span asp-validation-for="Empresa.NomeFantasia" class="text-danger"></span>
 		</div>
 		<div class="col-md-3">
 			<label for="inputCNPJ" class="form-label">CNPJ</label>
 			<input asp-for="Empresa.Cnpj" type="text" class="form-control">
+			<span asp-validation-for="Empresa.Cnpj" class="text-danger"></span>
 		</div>
 		<div class="form-group mt-3">
 			<input type="submit" value="Save" class="btn btn-primary" />
-
 			<a asp-action="Index" class="btn btn-primary">Voltar</a>
 		</div>
 	</form>
 
 </div>
-
-@if (ViewData.ModelState.ContainsKey("DataDemissao"))
-{
-	<div class="text-danger">
-		@Html.ValidationMessage("DataDemissao")
-	</div>
-}
 
 
 @section Scripts {

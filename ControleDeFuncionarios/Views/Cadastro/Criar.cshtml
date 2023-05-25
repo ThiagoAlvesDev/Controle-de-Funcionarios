@@ -14,36 +14,45 @@
 	<form class="row g-3" asp-action="Criar" method="post">
 		<div class="col-md-6">
 			<label class="form-label">Nome completo</label>
-			<input type="text" asp-for="NomeColaborador" class="form-control" placeholder='Thiago Sales Alves'>
+			<input type="text" asp-for="NomeColaborador" class="form-control" placeholder='Nome completo'>
+			<span asp-validation-for="NomeColaborador" class="text-danger"></span>
 		</div>
 		<div class="col-md-3">
 			<label class="form-label">CPF</label>
 			<input type="text" asp-for="Cpf" class="form-control" \
 				   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder=" xxx.xxx.xxx-xx">
+			<span asp-validation-for="Cpf" class="text-danger"></span>
 		</div>
 		<div class="col-3">
 			<label class="form-label">Matricula</label>
 			<input type="text" asp-for="Matricula" class="form-control" pattern="^[A-Z]{2}\d{4}$" placeholder="AA1234">
+			<span asp-validation-for="Matricula" class="text-danger"></span>
 		</div>
 
-		<h2 class="display-6">Cargo atribuido</h2>
+		<h2 class="display-6">Dados da Função</h2>
 
 		<div class="col-md-3">
 			<label class="form-label">Nome</label>
-			<input type="text" asp-for="Cargo.Funcao" class="form-control" placeholder='Desenvolvedor júnior'>
+			<input type="text" asp-for="Cargo.Funcao" class="form-control" placeholder="Desenvolvedor">
+			<span asp-validation-for="Cargo.Funcao" class="text-danger"></span>
+
 		</div>
 		<div class="col-md-3">
 			<label class="form-label">CBO(classificação brasileira de ocupações)</label>
 			<input type="text" asp-for="Cargo.Cbo" class="form-control" placeholder="">
+			<span asp-validation-for="Cargo.Cbo" class="text-danger"></span>
 		</div>
 		<div class="col-5">
-			<label class="form-label">Descrição da Atividade</label>
+			<label class="form-label">Descrição</label>
 			<textarea type="text" asp-for="Cargo.Descricao" class="form-control" placeholder=""></textarea>
+			<span asp-validation-for="Cargo.Descricao" class="text-danger"></span>
 		</div>
 
 		<div class="col-md-2">
 			<label class="form-label">Data de Admissão</label>
 			<input asp-for="DataAdmissao" class="form-control" />
+			<span asp-validation-for="DataAdmissao" class="text-danger"></span>
+			
 		</div>
 
 		<h2 class="display-6">Dados da Empresa</h2>
@@ -51,31 +60,24 @@
 		<div class="col-3">
 			<label class="form-label">Razão Social</label>
 			<input type="text" asp-for="Empresa.RazaoSocial" class="form-control" placeholder="">
+			<span asp-validation-for="Empresa.RazaoSocial" class="text-danger"></span>
 		</div>
 		<div class="col-md-6">
 			<label class="form-label">Nome Fantasia</label>
 			<input type="text" asp-for="Empresa.NomeFantasia" class="form-control" placeholder='Nydus'>
+			<span asp-validation-for="Empresa.NomeFantasia" class="text-danger"></span>
 		</div>
 		<div class="col-md-3">
 			<label class="form-label">CNPJ</label>
 			<input type="text" asp-for="Empresa.Cnpj" class="form-control" \
 				   pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder=" xx.xxx.xxx/xxxx-xx">
+			<span asp-validation-for="Empresa.Cnpj" class="text-danger"></span>
 		</div>
 		<div class="form-group">
 			<input type="submit" value="Create" class="btn btn-primary" />
 			<a asp-controller="Colaborador" asp-action="Index" class="btn btn-primary">Voltar</a>
 		</div>
 	</form>
-	@if (ViewData.ModelState.ContainsKey("Matricula"))
-	{
-		<div class="text-danger">
-			@Html.ValidationMessage("Matricula")
-		</div>
-	}
-	@if (ViewData.ModelState.ContainsKey("Empresa.Cnpj"))
-	{
-		<div class="text-danger">
-			@Html.ValidationMessage("Empresa.Cnpj")
-		</div>
-	}
+
+
 </div>
