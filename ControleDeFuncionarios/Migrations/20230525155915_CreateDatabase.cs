@@ -15,9 +15,9 @@ namespace ControleDeFuncionarios.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Funcao = table.Column<string>(type: "TEXT", nullable: true),
-                    Cbo = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true)
+                    Funcao = table.Column<string>(type: "TEXT", nullable: false),
+                    Cbo = table.Column<string>(type: "TEXT", nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,9 +30,9 @@ namespace ControleDeFuncionarios.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    RazaoSocial = table.Column<string>(type: "TEXT", nullable: true),
-                    NomeFantasia = table.Column<string>(type: "TEXT", nullable: true),
-                    Cnpj = table.Column<string>(type: "TEXT", nullable: true)
+                    RazaoSocial = table.Column<string>(type: "TEXT", nullable: false),
+                    NomeFantasia = table.Column<string>(type: "TEXT", nullable: false),
+                    Cnpj = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,9 +45,9 @@ namespace ControleDeFuncionarios.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    NomeColaborador = table.Column<string>(type: "TEXT", nullable: true),
-                    Cpf = table.Column<string>(type: "TEXT", nullable: true),
-                    Matricula = table.Column<string>(type: "TEXT", nullable: true),
+                    NomeColaborador = table.Column<string>(type: "TEXT", nullable: false),
+                    Cpf = table.Column<string>(type: "TEXT", nullable: false),
+                    Matricula = table.Column<string>(type: "TEXT", nullable: false),
                     DataAdmissao = table.Column<DateTime>(type: "TEXT", nullable: false),
                     DataDemissao = table.Column<DateTime>(type: "TEXT", nullable: true),
                     EmpresaId = table.Column<int>(type: "INTEGER", nullable: true),

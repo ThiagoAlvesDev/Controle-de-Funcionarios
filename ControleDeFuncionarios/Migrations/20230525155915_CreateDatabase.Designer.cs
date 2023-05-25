@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleDeFuncionarios.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20230525050052_CreateDatabase")]
+    [Migration("20230525155915_CreateDatabase")]
     partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,12 +26,15 @@ namespace ControleDeFuncionarios.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cbo")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Funcao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -49,9 +52,11 @@ namespace ControleDeFuncionarios.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cpf")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataAdmissao")
+                    b.Property<DateTime?>("DataAdmissao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("DataDemissao")
@@ -61,9 +66,11 @@ namespace ControleDeFuncionarios.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Matricula")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NomeColaborador")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -82,12 +89,15 @@ namespace ControleDeFuncionarios.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cnpj")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NomeFantasia")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RazaoSocial")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
