@@ -4,73 +4,78 @@
 	ViewData["Title"] = "Detalhes";
 }
 
-<h1>Detalhes</h1>
+@foreach (var item in Model)
+{
+	<div>
+		
 
+		<div>
+			<h2 class="display-6">Dados do Colaborador</h2>
+			<form class="row g-3">
+				<div class="col-md-6">
+					<label for="inputName" class="form-label">Nome completo</label>
+					<input type="text" class="form-control" id="inputName" value="@item.NomeColaborador" disabled>
+				</div>
+				<div class="col-md-3">
+					<label for="inputCPF" class="form-label">CPF</label>
+					<input disable type="text" class="form-control" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" value="@item.Cpf" disabled>
+				</div>
+				<div class="col-3">
+					<label for="inputAddress" class="form-label">Matrícula</label>
+					<input disable type="text" class="form-control" value="@item.Matricula" disabled>
+				</div>
 
-<div>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>
-					Nome
-				</th>
-				<th>
-					CPF
-				</th>
-				<th>
-					Matricula
-				</th>
+			</form>
+		</div>
 
-				<th>
-					Data de Admissão
-				</th>
-				<th>
-					Data De Demissão
-				</th>
-				<th>
-					Razão Social
-				</th>
-				<th>
-					Nome Fantasia
-				</th>
-				<th>
-					CNPJ
-				</th>				
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var item in Model)
-			{
-				<tr>
-					<td>
-						@Html.DisplayFor(modelItem => item.NomeColaborador)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Cpf)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Matricula)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.DataAdmissao)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.DataDemissao)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Empresa.RazaoSocial)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Empresa.Cnpj)
-					</td>
-					<td>
-					</td>
-				</tr>
-				<a asp-action="Index" asp-route-id="@item.Id">Voltar</a>
-			}
-		</tbody>
-	</table>
-</div>
+		<div>
+			<h2 class="display-6">Cargo atribuído</h2>
+			<form class="row g-3">
+				<div class="col-md-3">
+					<label for="inputCargo" class="form-label">Nome</label>
+					<input type="text" class="form-control" value="@item.Cargo.Funcao" disabled>
+				</div>
+				<div class="col-md-3">
+					<label for="inputCBO" class="form-label">CBO (Classificação Brasileira de Ocupações)</label>
+					<input disable type="text" class="form-control" value="@item.Cargo.Cbo" disabled>
+				</div>
+				<div class="col-5">
+					<label for="inputAddress" class="form-label">Descrição da Atividade</label>
+					<textarea type="text" class="form-control" disabled>@item.Cargo.Descricao </textarea>
+				</div>
+				<div class="col-md-2">
+					<label class="form-label">Data de Admissão</label>
+					<input type="datetime" class="form-control" value="@item.DataAdmissao.ToString("dd/MM/yyyy")" disabled />
+				</div>
+				<div class="col-md-2">
+					<label class="form-label">Data de Demissão</label>
+					<input type="datetime" class="form-control" value="@item.DataDemissao?.ToString("dd/MM/yyyy")" disabled />
+				</div>
+
+			</form>
+		</div>
+
+		<div>
+			<h2 class="display-6">Dados da Empresa</h2>
+			<form class="row g-3">
+				<div class="col-3">
+					<label for="inputAddress" class="form-label">Razão Social</label>
+					<input type="text" class="form-control" value="@item.Empresa.RazaoSocial" disabled>
+				</div>
+				<div class="col-md-6">
+					<label for="inputName" class="form-label">Nome Fantasia</label>
+					<input type="text" class="form-control" value="@item.Empresa.NomeFantasia" disabled>
+				</div>
+				<div class="col-md-3">
+					<label for="inputCNPJ" class="form-label">CNPJ</label>
+					<input type="text" class="form-control" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" value="@item.Empresa.Cnpj" disabled>
+				</div>
+
+			</form>
+			<div class="form-group mt-3">
+			
+			<a asp-action="Index" class="btn btn-primary">Voltar</a>
+		</div>
+		</div>
+	</div>
+}

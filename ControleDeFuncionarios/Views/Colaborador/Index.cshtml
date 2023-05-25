@@ -1,59 +1,58 @@
 ﻿@model IEnumerable<ControleDeFuncionarios.Models.ColaboradorModel>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Colaboradores Cadastrados";
 }
+<table class="table text-center">
+	<thead>
+		<tr>
+			<th>
+				Nome do Colaborador
+			</th>
+			<th>
+				CPF
+			</th>
+			<th>
+				Matricula
+			</th>
+			<th>
+				Data de Admissão
+			</th>
+			<th>
+				Data de Demissão
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.NomeColaborador)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cpf)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Matricula)
+				</td>
+				<td>
+				<td>
+						@((item.DataAdmissao != default(DateTime)) ? item.DataAdmissao.ToString("dd/MM/yyyy") : "")
+				</td>
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeColaborador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cpf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Matricula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataAdmissao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataDemissao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeColaborador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cpf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matricula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataAdmissao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDemissao)
-            </td>
-            <td>
-                <a asp-action="Editar" asp-route-colaboradorId="@item.Id" >Editar</a> |
-                <a asp-action="Detalhes" asp-route-colaboradorId="@item.Id">Detalhes</a> |
-                
-            </td>
-        </tr>
-}
-    </tbody>
+				<td>
+						@((item.DataDemissao != null) ? item.DataDemissao.Value.ToString("dd/MM/yyyy") : "")
+				</td>
+
+				<td>
+					<a asp-action="Editar" asp-route-colaboradorId="@item.Id" class="btn btn-primary">Editar</a>
+					<a asp-action="Detalhes" asp-route-colaboradorId="@item.Id" class="btn btn-primary">Detalhes</a>
+
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>
