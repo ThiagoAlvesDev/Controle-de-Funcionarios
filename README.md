@@ -11,7 +11,7 @@
 * A implementação é feita em C#;
 * A persistência dos dados é feita em SQLite usando o <a href="https://learn.microsoft.com/en-us/ef/">EntityFramework </a>
 * Foi utilizado framework Asp.Net (documentação disponivel em <a href="https://dotnet.microsoft.com/pt-br/apps/aspnet">Aps.Net</a>)
-* As bibliotecas utilizadas no projeto podem ser  visualizadas em <a href="">PackageReference.txt</a>.
+* As bibliotecas utilizadas no projeto podem ser  visualizadas em [PackageReference.txt](/ControleDeFuncionarios/PackageReference.txt)
 
 ## Execução
 <hr>
