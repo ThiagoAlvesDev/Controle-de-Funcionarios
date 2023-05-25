@@ -30,6 +30,20 @@ namespace ControleDeFuncionarios.Controllers
             return View(colaborador);
         }
 
+        [HttpPost]
+        public IActionResult Editar(ColaboradorModel colaborador)
+		{
+            if (colaborador.DataDemissao.HasValue && colaborador.DataDemissao.Value < colaborador.DataAdmissao)
+            {
+                ModelState.AddModelError("DataDemissao", "A Data de Demissão deve ser maior que a Data de Admissão.");
+                
+                return View("Editar", colaborador);
+            }
+
+            _bancoContext.Colaborador.Update(colaborador);
+            _bancoContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Visualizar()
         {

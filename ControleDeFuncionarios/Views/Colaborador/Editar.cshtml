@@ -10,103 +10,85 @@
 <hr />
 <div>
 
-
-	<div>
+	<form class="row g-3" asp-action="Editar" method="post">
 		<h2 class="display-6">Dados do Colaborador</h2>
-		<form class="row g-3">
-			<div class="col-md-6">
-				<label for="inputName" class="form-label">Nome completo</label>
-				<input asp-for="NomeColaborador" type="text" class="form-control" id="inputName">
-			</div>
-			<div class="col-md-3">
-				<label for="inputCPF" class="form-label">CPF</label>
-				<input asp-for="Cpf" type="text" class="form-control">
-			</div>
-			<div class="col-3">
-				<label for="inputAddress" class="form-label">Matrícula</label>
-				<input asp-for="Matricula" type="text" class="form-control" v>
-			</div>
 
-		</form>
-	</div>
+		<div class="col-md-6">
+			<label for="inputName" class="form-label">Nome completo</label>
+			<input asp-for="NomeColaborador" type="text" class="form-control" id="inputName">
+		</div>
+		<div class="col-md-3">
+			<label for="inputCPF" class="form-label">CPF</label>
+			<input asp-for="Cpf" type="text" class="form-control">
+		</div>
+		<div class="col-3">
+			<label for="inputAddress" class="form-label">Matrícula</label>
+			<input asp-for="Matricula" type="text" class="form-control" >
+		</div>
 
-	<div>
+
+
 		<h2 class="display-6">Cargo atribuído</h2>
-		<form class="row g-3">
-			<div class="col-md-3">
-				<label for="inputCargo" class="form-label">Nome</label>
-				<input asp-for="Cargo.Funcao" Type="text" class="form-control">
-			</div>
-			<div class="col-md-3">
-				<label for="inputCBO" class="form-label">CBO (Classificação Brasileira de Ocupações)</label>
-				<input asp-for="Cargo.Cbo" type="text" class="form-control">
-			</div>
-			<div class="col-5">
-				<label for="inputAddress" class="form-label">Descrição da Atividade</label>
-				<textarea asp-for="Cargo.Descricao" type="text" class="form-control"> </textarea>
-			</div>
-			<div class="col-md-2">
-				<label class="form-label">Data de Admissão</label>
-				<input asp-for="DataAdmissao" class="form-control" />
-			</div>
-			<div class="col-md-2">
-				<label class="form-label">Data de Demissão</label>
-				<input asp-for="DataDemissao" class="form-control" id="inputDataDemissao" />
-			</div>
 
-		</form>
-	</div>
+		<div class="col-md-3">
+			<label for="inputCargo" class="form-label">Nome</label>
+			<input asp-for="Cargo.Funcao" Type="text" class="form-control">
+		</div>
+		<div class="col-md-3">
+			<label for="inputCBO" class="form-label">CBO (Classificação Brasileira de Ocupações)</label>
+			<input asp-for="Cargo.Cbo" type="text" class="form-control">
+		</div>
+		<div class="col-5">
+			<label for="inputAddress" class="form-label">Descrição da Atividade</label>
+			<textarea asp-for="Cargo.Descricao" type="text" class="form-control"> </textarea>
+		</div>
+		<div class="col-md-2">
+			<label class="form-label">Data de Admissão</label>
+			<input asp-for="DataAdmissao" class="form-control" />
+		</div>
+		<div class="col-md-2">
+			<label class="form-label">Data de Demissão</label>
+			<input asp-for="DataDemissao" class="form-control" id="inputDataDemissao" />
+		</div>
 
-	<div>
+
+
 		<h2 class="display-6">Dados da Empresa</h2>
-		<form class="row g-3">
-			<div class="col-3">
-				<label for="inputAddress" class="form-label">Razão Social</label>
-				<input asp-for="Empresa.RazaoSocial" type="text" class="form-control">
-			</div>
-			<div class="col-md-6">
-				<label for="inputName" class="form-label">Nome Fantasia</label>
-				<input asp-for="Empresa.NomeFantasia" type="text" class="form-control">
-			</div>
-			<div class="col-md-3">
-				<label for="inputCNPJ" class="form-label">CNPJ</label>
-				<input asp-for="Empresa.Cnpj" type="text" class="form-control">
-			</div>
 
-		</form>
+		<div class="col-3">
+			<label for="inputAddress" class="form-label">Razão Social</label>
+			<input asp-for="Empresa.RazaoSocial" type="text" class="form-control">
+		</div>
+		<div class="col-md-6">
+			<label for="inputName" class="form-label">Nome Fantasia</label>
+			<input asp-for="Empresa.NomeFantasia" type="text" class="form-control">
+		</div>
+		<div class="col-md-3">
+			<label for="inputCNPJ" class="form-label">CNPJ</label>
+			<input asp-for="Empresa.Cnpj" type="text" class="form-control">
+		</div>
 		<div class="form-group mt-3">
 			<input type="submit" value="Save" class="btn btn-primary" />
 
 			<a asp-action="Index" class="btn btn-primary">Voltar</a>
 		</div>
-	</div>
+	</form>
+
 </div>
 
-<script>
-    // Obtém a referência do elemento input
-    var inputDataDemissao = document.getElementById("inputDataDemissao");
-    // Obtém a referência do elemento input de admissão (seu id precisa ser definido corretamente)
-    var inputDataAdmissao = document.getElementById("inputDataAdmissao");
+@if (ViewData.ModelState.ContainsKey("DataDemissao"))
+{
+	<div class="text-danger">
+		@Html.ValidationMessage("DataDemissao")
+	</div>
+}
 
-    // Define o evento change no elemento input de admissão
-    inputDataAdmissao.addEventListener("change", function () {
-        // Obtém as datas de admissão e demissão
-        var dataAdmissao = new Date(inputDataAdmissao.value);
-        var dataDemissao = new Date(inputDataDemissao.value);
-
-        // Compara as datas
-        if (dataDemissao < dataAdmissao) {
-            // Se a data de demissão for menor que a data de admissão, define a data de demissão igual à data de admissão
-            
-        }
-    });
-</script>
 
 @section Scripts {
     @{
 	await Html.RenderPartialAsync("_ValidationScriptsPartial");
-	
-	
+
+
 }
 
 }
