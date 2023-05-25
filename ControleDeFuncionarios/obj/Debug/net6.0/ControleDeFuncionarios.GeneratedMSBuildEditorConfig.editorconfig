@@ -16,57 +16,57 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ControleDeFuncionarios
 build_property.RootNamespace = ControleDeFuncionarios
-build_property.ProjectDir = D:\Dev\C#\ControleDeFuncionarios\ControleDeFuncionarios\
+build_property.ProjectDir = d:\Dev\C#\ControleDeFuncionarios\ControleDeFuncionarios\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\Dev\C#\ControleDeFuncionarios\ControleDeFuncionarios
+build_property.MSBuildProjectDirectory = d:\Dev\C#\ControleDeFuncionarios\ControleDeFuncionarios
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Cadastro/Criar.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Cadastro/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9cQ3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Cadastro/Index.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Cadastro/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Detalhes.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcRGV0YWxoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Editar.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Index.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Colaborador/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Home/Index.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Home/Privacy.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/Error.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/_ViewImports.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/_ViewStart.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/_Layout.cshtml]
+[d:/Dev/C\#/ControleDeFuncionarios/ControleDeFuncionarios/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-eeohyfctc3
