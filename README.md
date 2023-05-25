@@ -21,14 +21,27 @@
 * Configure o SQLite   <a href="https://www.sqlite.org/index.html">documentação SQLite</a>    
 * Configurar o banco de dados. criando a connection string e adicionando em "ConfigureServices" dentro de Startup.cs
 * Apos as configurações de connection String e SQLite  inicie o banco de dados no projeto.
+* Comando para adicionar o banco de dados local. 
+  -- Package Manager Console     
+ 
+       Add-Migragrion NomeQueDesejar
+       update-database
+       
+  -- Terminal
+      
+       dotnet ef migrations add NomeDaMigracao
+       dotnet ef database update
 
+      
+ * Comando para Executar o projeto    
+   -- Package Manager Console
+       
+       dotnet run
+    
 
-      Add-Migragrion NomeQueDesejar
-      update-database
+   -- Terminal
 
-* Execute o projeto 
-
-      dotnet watch run  
+       dotnet watch run  
 
 
 
